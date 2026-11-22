@@ -27,12 +27,57 @@
             </div>
         </div>
 
-        <!-- المرحلة الأولى: تسجيل الاسم والبريد -->
+        <!-- المرحلة الأولى: شرائح الإعلان + نبذة المطور + تسجيل الاسم والبريد -->
         <section class="card active-section" id="step-1">
             <div class="card-header">
                 <span class="badge">بوابة التواصل المباشر</span>
                 <h1>أهلاً بك</h1>
-                <p>يرجى إدخال اسمك وبريدك الإلكتروني للمتابعة إلى صفحة إرسال الرسالة.</p>
+                <p>سجّل اسمك وبريدك الإلكتروني للمتابعة إلى صفحة إرسال الرسالة.</p>
+            </div>
+
+            <!-- شرائح الإعلان (Announcement Slider) -->
+            <div class="promo-slider" aria-label="شرائح إعلانية">
+                <div class="slides-track" id="slides-track">
+                    <div class="slide">
+                        <span class="slide-tag">إعلان • برمجة وتطوير</span>
+                        <h3>تطوير أنظمة ومواقع مخصصة</h3>
+                        <p>بناء أنظمة إدارة، مواقع ويب، وأدوات برمجية عملية تناسب احتياجك.</p>
+                    </div>
+                    <div class="slide">
+                        <span class="slide-tag">خدمات • تصميم وتقنية</span>
+                        <h3>هويات بصرية وحلول رقمية</h3>
+                        <p>تصميم واجهات عصرية، لوجوهات، ومواد ترويجية بطابع احترافي.</p>
+                    </div>
+                    <div class="slide">
+                        <span class="slide-tag">تواصل مباشر • رد سريع</span>
+                        <h3>استفساراتك وطلباتك في مكان واحد</h3>
+                        <p>أرسل رسالتك الآن ليصلك الرد مباشرة على بريدك الإلكتروني.</p>
+                    </div>
+                </div>
+
+                <div class="slider-controls">
+                    <button type="button" class="slider-btn" id="prev-slide" aria-label="الشريحة السابقة">‹</button>
+                    <div class="slider-dots" id="slider-dots">
+                        <button type="button" class="slider-dot active" data-index="0" aria-label="شريحة 1"></button>
+                        <button type="button" class="slider-dot" data-index="1" aria-label="شريحة 2"></button>
+                        <button type="button" class="slider-dot" data-index="2" aria-label="شريحة 3"></button>
+                    </div>
+                    <button type="button" class="slider-btn" id="next-slide" aria-label="الشريحة التالية">›</button>
+                </div>
+            </div>
+
+            <!-- نبذة خفيفة عن المطور -->
+            <div class="dev-card">
+                <div class="dev-top">
+                    <div class="dev-avatar">م</div>
+                    <div>
+                        <span class="dev-role">المطور • نظم معلومات وتطوير برمجيات</span>
+                        <h2>مهند عبدالرحمن</h2>
+                    </div>
+                </div>
+                <p class="dev-bio" id="dev-bio-text">
+                    مطور برمجيات ومواقع ومهتم بالأمن السيبراني والشبكات، أعمل على بناء أنظمة وتطبيقات عملية وتجارب رقمية واضحة وسريعة.
+                </p>
             </div>
 
             <form id="register-form">
