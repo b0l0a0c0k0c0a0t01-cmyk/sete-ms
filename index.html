@@ -3,83 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تواصل مباشر | بوابة الرسائل</title>
+    <title>تواصل مباشر | عالم بنفسجي تفاعلي</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="bg-glow"></div>
+    <!-- خلفية متحركة (أضواء بنفسجية + جسيمات/دوائر طافية) -->
+    <div class="animated-bg" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
 
     <main class="container">
-        <!-- مؤشر الخطوات -->
-        <div class="steps-indicator">
-            <div class="step active" id="dot-1">
-                <span>1</span>
-                <p>التعريف</p>
+        <!-- شريط علوي تفاعلي + زر معلومات المطور -->
+        <header class="top-bar">
+            <div class="steps-indicator">
+                <div class="step active" id="dot-1">
+                    <span>1</span>
+                    <p>التعريف</p>
+                </div>
+                <div class="step-line" id="line-1"></div>
+                <div class="step" id="dot-2">
+                    <span>2</span>
+                    <p>الرسالة</p>
+                </div>
             </div>
-            <div class="step-line" id="line-1"></div>
-            <div class="step" id="dot-2">
-                <span>2</span>
-                <p>الرسالة</p>
-            </div>
-        </div>
 
-        <!-- المرحلة الأولى: شرائح الإعلان + نبذة المطور + تسجيل الاسم والبريد -->
+            <button type="button" class="btn-about-trigger" id="open-about-btn">
+                <span class="sparkle">✦</span>
+                <span>معلوماتي</span>
+            </button>
+        </header>
+
+        <!-- المرحلة الأولى: شريط عرض الصور + تسجيل الاسم والبريد -->
         <section class="card active-section" id="step-1">
             <div class="card-header">
-                <span class="badge">بوابة التواصل المباشر</span>
-                <h1>أهلاً بك</h1>
-                <p>سجّل اسمك وبريدك الإلكتروني للمتابعة إلى صفحة إرسال الرسالة.</p>
+                <div class="header-row">
+                    <span class="badge">✨ مساحة تواصل مرحة ومباشرة</span>
+                    <button type="button" class="btn-vibe" id="vibe-btn" title="تغيير المزاج الضوئي">⚡ نبضة</button>
+                </div>
+                <h1>أهلاً بك في مساحتي</h1>
+                <p>تصفّح معرض الصور السريع، ثم سجّل اسمك وبريدك لتنتقل لصفحة إرسال الرسالة.</p>
             </div>
 
-            <!-- شرائح الإعلان (Announcement Slider) -->
-            <div class="promo-slider" aria-label="شرائح إعلانية">
-                <div class="slides-track" id="slides-track">
-                    <div class="slide">
-                        <span class="slide-tag">إعلان • برمجة وتطوير</span>
-                        <h3>تطوير أنظمة ومواقع مخصصة</h3>
-                        <p>بناء أنظمة إدارة، مواقع ويب، وأدوات برمجية عملية تناسب احتياجك.</p>
-                    </div>
-                    <div class="slide">
-                        <span class="slide-tag">خدمات • تصميم وتقنية</span>
-                        <h3>هويات بصرية وحلول رقمية</h3>
-                        <p>تصميم واجهات عصرية، لوجوهات، ومواد ترويجية بطابع احترافي.</p>
-                    </div>
-                    <div class="slide">
-                        <span class="slide-tag">تواصل مباشر • رد سريع</span>
-                        <h3>استفساراتك وطلباتك في مكان واحد</h3>
-                        <p>أرسل رسالتك الآن ليصلك الرد مباشرة على بريدك الإلكتروني.</p>
+            <!-- شريط عرض الصور (Image Gallery Slider) -->
+            <div class="gallery-box" aria-label="شريط عرض الصور">
+                <div class="gallery-viewport">
+                    <div class="gallery-track" id="gallery-track">
+                        <!-- الشرائح تُبنى أو تُحدّث من script.js، وهذه بنية أساسية للمعاينة -->
+                        <div class="gallery-slide">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80" alt="برمجة وتطوير">
+                            <div class="slide-caption">
+                                <span class="caption-tag">برمجة وأنظمة</span>
+                                <h3>تطوير حلول ويب وتطبيقات عملية</h3>
+                            </div>
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=80" alt="أمن سيبراني وشبكات">
+                            <div class="slide-caption">
+                                <span class="caption-tag">شبكات وأمن</span>
+                                <h3>بنية تحتية وأفكار تقنية مبتكرة</h3>
+                            </div>
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=900&q=80" alt="تصميم وإبداع بصري">
+                            <div class="slide-caption">
+                                <span class="caption-tag">تصميم وإبداع</span>
+                                <h3>واجهات عصرية ولمسات بصرية جذابة</h3>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="slider-controls">
-                    <button type="button" class="slider-btn" id="prev-slide" aria-label="الشريحة السابقة">‹</button>
-                    <div class="slider-dots" id="slider-dots">
-                        <button type="button" class="slider-dot active" data-index="0" aria-label="شريحة 1"></button>
-                        <button type="button" class="slider-dot" data-index="1" aria-label="شريحة 2"></button>
-                        <button type="button" class="slider-dot" data-index="2" aria-label="شريحة 3"></button>
-                    </div>
-                    <button type="button" class="slider-btn" id="next-slide" aria-label="الشريحة التالية">›</button>
+                <div class="gallery-bar">
+                    <button type="button" class="g-btn" id="g-prev" aria-label="الصورة السابقة">‹</button>
+                    <div class="g-dots" id="g-dots"></div>
+                    <button type="button" class="g-btn" id="g-next" aria-label="الصورة التالية">›</button>
                 </div>
             </div>
 
-            <!-- نبذة خفيفة عن المطور -->
-            <div class="dev-card">
-                <div class="dev-top">
-                    <div class="dev-avatar">م</div>
-                    <div>
-                        <span class="dev-role">المطور • نظم معلومات وتطوير برمجيات</span>
-                        <h2>مهند عبدالرحمن</h2>
-                    </div>
-                </div>
-                <p class="dev-bio" id="dev-bio-text">
-                    مطور برمجيات ومواقع ومهتم بالأمن السيبراني والشبكات، أعمل على بناء أنظمة وتطبيقات عملية وتجارب رقمية واضحة وسريعة.
-                </p>
-            </div>
-
+            <!-- نموذج تسجيل الاسم والبريد -->
             <form id="register-form">
                 <div class="input-group">
                     <label for="sender-name">الاسم الكامل</label>
@@ -92,13 +100,13 @@
                 </div>
 
                 <button type="submit" class="btn-primary">
-                    <span>المتابعة لكتابة الرسالة</span>
+                    <span>انتقل لصفحة الرسالة</span>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
                 </button>
             </form>
         </section>
 
-        <!-- المرحلة الثانية: كتابة وإرسال الرسالة -->
+        <!-- المرحلة الثانية: كتابة وإرسال الرسالة عبر Web3Forms -->
         <section class="card hidden-section" id="step-2">
             <div class="user-banner">
                 <div class="user-info">
@@ -108,17 +116,16 @@
                         <span id="display-email">email@example.com</span>
                     </div>
                 </div>
-                <button type="button" class="btn-edit" id="edit-info-btn" title="تعديل البيانات">تعديل</button>
+                <button type="button" class="btn-edit" id="edit-info-btn">تعديل</button>
             </div>
 
             <div class="card-header compact">
-                <h2>اكتب رسالتك</h2>
-                <p>ستصل رسالتك مباشرة إلى البريد الشخصي وسأتمكن من الرد على بريدك.</p>
+                <h2>اكتب رسالتك ✉️</h2>
+                <p>ستصل رسالتك مباشرة إلى البريد مع تفعيل الرد المباشر على بريدك.</p>
             </div>
 
             <form id="message-form">
-                <!-- ضع مفتاح Web3Forms الخاص بك هنا -->
-                <input type="hidden" name="access_key" value="d1ccd508-356f-4617-8880-f1b2b5cf4762">
+                <input type="hidden" name="access_key" value="D1ccd508-356f-4617-8880-f1b2b5cf4762">
                 <input type="hidden" name="subject" id="email-subject" value="رسالة جديدة من الموقع">
                 <input type="hidden" name="from_name" id="hidden-name">
                 <input type="hidden" name="email" id="hidden-email">
@@ -127,12 +134,12 @@
 
                 <div class="input-group">
                     <label for="msg-title">موضوع الرسالة</label>
-                    <input type="text" id="msg-title" placeholder="مثلاً: استفسار، تعاون، اقتراح..." required>
+                    <input type="text" id="msg-title" placeholder="مثلاً: سلام، استفسار، فكرة مشروع..." required>
                 </div>
 
                 <div class="input-group">
                     <label for="msg-body">محتوى الرسالة</label>
-                    <textarea id="msg-body" name="message" rows="5" placeholder="اكتب تفاصيل رسالتك بكل وضوح..." required></textarea>
+                    <textarea id="msg-body" name="message" rows="5" placeholder="اكتب رسالتك بكل أريحية..." required></textarea>
                 </div>
 
                 <button type="submit" class="btn-primary" id="send-btn">
@@ -144,14 +151,42 @@
 
         <!-- شاشة النجاح بعد الإرسال -->
         <section class="card hidden-section success-card" id="step-success">
-            <div class="success-icon">
-                <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            </div>
-            <h2>تم إرسال رسالتك بنجاح!</h2>
-            <p>شكراً لتواصلك يا <strong id="success-name"></strong>. وصلت رسالتك إلى البريد بنجاح وسيتم الرد عليك عبر <span id="success-email"></span> في أقرب وقت.</p>
+            <div class="success-icon">🎉</div>
+            <h2>وصلت رسالتك بنجاح!</h2>
+            <p>يا هلا يا <strong id="success-name"></strong>، تم إرسال رسالتك بنجاح وسأتمكن من الرد عليك عبر <span id="success-email"></span>.</p>
             <button type="button" class="btn-secondary" id="send-another-btn">إرسال رسالة أخرى</button>
         </section>
     </main>
+
+    <!-- القائمة المنبثقة (Modal) لمعلومات المطور -->
+    <div class="modal-backdrop" id="about-modal" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button type="button" class="modal-close" id="close-about-btn" aria-label="إغلاق">✕</button>
+
+            <div class="modal-profile">
+                <div class="modal-avatar">م</div>
+                <div>
+                    <span class="modal-badge">نبذة المطور</span>
+                    <h2 id="modal-title">مهند عبدالرحمن</h2>
+                    <p class="modal-subtitle">نظم معلومات • تطوير برمجيات ومواقع • شبكات وأمن سيبراني</p>
+                </div>
+            </div>
+
+            <p class="modal-bio">
+                أهلاً بك! أنا مطور برمجيات ومواقع ومهتم بالشبكات والأمن السيبراني، أحب بناء الأنظمة والأدوات العملية والواجهات التفاعلية الخفيفة التي تجمع بين البساطة والسرعة.
+            </p>
+
+            <div class="modal-tags">
+                <span>تطوير مواقع وأنظمة</span>
+                <span>واجهات تفاعلية</span>
+                <span>شبكات وأمن معلومات</span>
+            </div>
+
+            <button type="button" class="btn-primary modal-cta" id="modal-go-message-btn">
+                <span>تواصل معي الآن</span>
+            </button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
